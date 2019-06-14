@@ -6,7 +6,7 @@ function withAuth(Component) {
         const isAuth = Boolean(localStorage.getItem('token'));
 
         if(!isAuth) {
-            props.history.push('/login');
+            props.history.push('/signin');
         }
 
         return isAuth ? <Component {...props} /> : <div>You're not authorized</div>;

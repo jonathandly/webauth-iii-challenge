@@ -4,8 +4,9 @@ const Users = require('./users-model.js');
 const restricted = require('../auth/restricted-middleware.js');
 
 router.get('/', restricted, (req, res) => {
-    const { department } = req.headers;
-    Users.findBy({ department })
+    // const { department } = req.headers;
+    // Users.findBy({ department })
+    Users.find()
         .then(users => {
             res.json(users);
         })
